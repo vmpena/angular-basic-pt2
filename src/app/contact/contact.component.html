@@ -1,0 +1,36 @@
+<!--Contact Us-->
+<fieldset>
+  <legend class="marker">contact.component.html</legend>
+
+  <h1>{{title}}</h1>
+  <p>Reach us by phone at: <em>{{phoneNumber}}</em></p>
+  <p>You can also reach us by any number of alternate means such as:</p>
+
+  <!--    The NgFor directive instantiates a template once per item from an iterable.
+          The context for each instantiated template inherits from the outer context
+          with the given loop variable set to the current item from the iterable.
+          https://angular.io/docs/ts/latest/api/common/index/NgFor-directive.html
+
+          NgFor is a repeater directive — a way to customize data display.
+
+          Our goal is to present a list of items. We define a block of HTML that
+          defines how a single item should be displayed. We tell Angular to use
+          that block as a template for rendering each item in the list.
+          https://angular.io/docs/ts/latest/guide/template-syntax.html#!#ngFor
+  -->
+  <ul>
+    <li *ngFor="let method of contactMethods">{{method}}</li>
+  </ul>
+
+  <!--    Example of ngIf structural directive
+          https://angular.io/docs/ts/latest/guide/structural-directives.html#!#ngIf
+  -->
+  <div *ngIf="officeIsOpen">
+    Our office is currently open, give us a call now.
+  </div>
+
+  <div *ngIf="!officeIsOpen">
+    Our office is closed at the moment, but we'll be open again soon.
+  </div>
+
+</fieldset>

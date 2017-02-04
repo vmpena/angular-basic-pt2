@@ -1,3 +1,38 @@
-<h1>
-  {{title}}
-</h1>
+<!--    This view template functions in similar way as a layout page in ASP.NET MVC.
+        It displays the page header, navigation and footer consistently across
+        all site content. The content of each individual component is inserted
+        in the area marked by the RouterOutlet directive. -->
+
+<fieldset>
+  <legend class="marker">app.component.html</legend>
+
+  <!--    The easiest way to display a component property is to bind the property name
+          through interpolation.
+
+          With interpolation, you put the property name in the view template, enclosed in
+          double curly braces: {{name_of_property}}
+          https://angular.io/docs/ts/latest/guide/displaying-data.html#!#interpolation -->
+
+  <h3>{{title}}</h3>
+
+  <nav>
+    <!--    The RouterLink directives let you link to specific parts of your app.
+            https://angular.io/docs/ts/latest/api/router/index/RouterLink-directive.html
+
+            The RouterLinkActive directive lets you add a CSS class to an element when
+            the link's route becomes active.
+            https://angular.io/docs/ts/latest/api/router/index/RouterLinkActive-directive.html
+    -->
+    <a routerLink="/home" routerLinkActive="active">Home</a>
+    <a routerLink="/about" routerLinkActive="active">About Us</a>
+    <a routerLink="/contact" routerLinkActive="active">Contact Us</a>
+  </nav>
+
+  <br/>
+  <!--    The RouterOutlet directive acts as a placeholder that Angular
+          dynamically fills based on the current router state.
+          https://angular.io/docs/ts/latest/api/router/index/RouterOutlet-directive.html
+  -->
+  <router-outlet></router-outlet>
+  <div class="footer">© {{year}} Footer text displays underneath component content</div>
+</fieldset>

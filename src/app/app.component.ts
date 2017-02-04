@@ -5,6 +5,10 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
-  title = 'app works!';
+  title = 'Angular 2 Basic - Part 2';
+  description = 'Brief overview of features';
+
+  year = new Date().getFullYear();
 }

@@ -1,1 +1,108 @@
-/* You can add global styles to this file, and also import other style files */
+h1 {
+    color: #369;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 250%;
+}
+h2, h3 {
+    color: #444;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+}
+body {
+    margin: 1em;
+}
+
+body, input[text], button {
+    color: #888;
+    font-family: Cambria, Georgia, serif;
+}
+
+a {
+    cursor: pointer;
+}
+button {
+    font-family: Tahoma, Geneva, sans-serif;
+    background-color: #eee;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #cfd8dc;
+}
+button:disabled {
+    background-color: #eee;
+    color: #aaa;
+    cursor: auto;
+}
+
+/* Navigation link styles */
+nav a {
+    padding: 5px 10px;
+    text-decoration: none;
+    margin-top: 10px;
+    display: inline-block;
+    background-color: #eee;
+    border-radius: 4px;
+}
+nav a:visited, a:link {
+    color: #607D8B;
+}
+nav a:hover {
+    color: #039be5;
+    background-color: #CFD8DC;
+}
+nav a.active {
+    color: #FFF;
+    background-color: #369;
+}
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* From Chris Bracco https://codepen.io/cbracco/pen/zekgx */
+.footer {
+    /* comment out position to allow footer to display inside fieldset */
+    /* position: absolute;*/
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    font-size: small;
+    /*background-color: #efefef;*/
+    text-align: center;
+}
+
+/* Added by VP 10 August 2016 */
+.marker {
+    margin: 0;
+    font-style: italic;
+    font-size: small;
+    background-color: #EFF1F2;
+    padding: 1px 8px;
+    /*+border-radius: 6px;*/
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+}
+
+.componentMarker {
+    margin: 0;
+    font-style: italic;
+    font-size: small;
+    background-color: #dadada;
+    padding: 1px 8px;
+    /*+border-radius: 6px;*/
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+}
+
+fieldset
+{
+    border: solid 1px #dadada;
+    border-radius: 6px;
+    /*background-color: #ffb73e !important;*/
+}
