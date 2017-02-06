@@ -9,6 +9,9 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 
 import { Routing } from './app.routing';
+import { CustomersComponent } from './customers/customers.component';
+import { CustomerDetailComponent } from './customer-detail/customer-detail.component';
+import { CustomerService } from "./services/customer.service";
 
 
 @NgModule({
@@ -16,7 +19,9 @@ import { Routing } from './app.routing';
     AppComponent,
     HomeComponent,
     AboutComponent,
-    ContactComponent
+    ContactComponent,
+    CustomersComponent,
+    CustomerDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +29,7 @@ import { Routing } from './app.routing';
     HttpModule,
     Routing
   ],
-  providers: [],
+  providers: [ CustomerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

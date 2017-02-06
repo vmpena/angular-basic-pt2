@@ -4,6 +4,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { AboutComponent }  from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
+import { CustomersComponent } from './customers/customers.component';
+import { CustomerDetailComponent } from './customer-detail/customer-detail.component';
 
 const appRoutes: Routes = [
     {
@@ -19,9 +21,17 @@ const appRoutes: Routes = [
         component: ContactComponent
     },
     {
-        path: '',
-        redirectTo: 'home',
-        pathMatch: 'full'
+      path:'customers',
+      component: CustomersComponent
+    },
+    {
+      path:'customer-detail/:id',
+      component: CustomerDetailComponent
+    },
+    {
+      path: '',
+      redirectTo: 'home',
+      pathMatch: 'full'
     }
 ];
 

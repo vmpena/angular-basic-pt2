@@ -5,7 +5,7 @@
 
 <fieldset>
   <legend class="marker">app.component.html</legend>
-
+  <div class="indent">
   <!--    The easiest way to display a component property is to bind the property name
           through interpolation.
 
@@ -26,6 +26,7 @@
     <a routerLink="/home" routerLinkActive="active">Home</a>
     <a routerLink="/about" routerLinkActive="active">About Us</a>
     <a routerLink="/contact" routerLinkActive="active">Contact Us</a>
+    <a routerLink="/customers" routerLinkActive="active">Customers</a>
   </nav>
 
   <br/>
@@ -34,5 +35,7 @@
           https://angular.io/docs/ts/latest/api/router/index/RouterOutlet-directive.html
   -->
   <router-outlet></router-outlet>
+
+  </div>
   <div class="footer">© {{year}} Footer text displays underneath component content</div>
 </fieldset>
