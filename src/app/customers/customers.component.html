@@ -4,11 +4,11 @@
   <div class="indent">
 
       <h2>Customers</h2>
-      <p>This is the customers page. Lorum ipsum dolor sit amet. Etiam imperdiet felis id sapien vehicula ultrices. Donec eu sem eget velit bibendum condimentum a fringilla dui.
-        Proin tempor est vel ligula tincidunt efficitur. Nam varius bibendum nisi. Duis ut dui rhoncus, malesuada eros vitae,
-        pharetra elit. Vestibulum pulvinar, elit a aliquam molestie, est lectus dictum ex, sit amet vestibulum ipsum ante
-        consectetur turpis. Cras imperdiet varius nisi, ac rhoncus diam convallis et. Duis sit amet leo urna. Nulla iaculis
-        malesuada mauris nec pellentesque. <a href="#">Link test</a>
+      <p>The data below is retrieved from a service that calls
+        a mock api that returns json data. The customers.component calls the  service in its
+        <code>ngOnInit()</code> method. Each customer name links to the customer-detail
+        component, passing the ID number as a parameter:
+         <code> [routerLink]="['/customer-detail', customer.ID]</code>
       </p>
 
       <div class='panel panel-primary'>

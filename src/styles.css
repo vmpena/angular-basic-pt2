@@ -51,13 +51,13 @@ nav a:visited, a:link {
     color: #607D8B;
 }
 nav a:hover {
-    color: #039be5;
+    color: #000; /* #039be5; */
     background-color: #CFD8DC;
     text-decoration: none;
 }
 nav a.active {
     color: #FFF;
-    background-color: #369;
+    background-color: #607D8B; /*#369;*/
     text-decoration: none;
 }
 

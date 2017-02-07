@@ -27,11 +27,15 @@
     <a routerLink="/about" routerLinkActive="active">About Us</a>
     <a routerLink="/contact" routerLinkActive="active">Contact Us</a>
     <a routerLink="/customers" routerLinkActive="active">Customers</a>
+    <a routerLink="/parameters" routerLinkActive="active">Parameters</a>
   </nav>
 
   <br/>
   <!--    The RouterOutlet directive acts as a placeholder that Angular
           dynamically fills based on the current router state.
+
+          The router adds the <router-outlet> element to the DOM and subsequently inserts
+          the navigated view element immediately after the <router-outlet>.
           https://angular.io/docs/ts/latest/api/router/index/RouterOutlet-directive.html
   -->
   <router-outlet></router-outlet>

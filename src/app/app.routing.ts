@@ -6,6 +6,9 @@ import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
 import { CustomersComponent } from './customers/customers.component';
 import { CustomerDetailComponent } from './customer-detail/customer-detail.component';
+import { ParametersComponent } from './parameters/parameters.component';
+import { ParameterDetailsComponent } from './parameter-details/parameter-details.component';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 
 const appRoutes: Routes = [
     {
@@ -25,8 +28,20 @@ const appRoutes: Routes = [
       component: CustomersComponent
     },
     {
+      path:'parameters',
+      component: ParametersComponent
+    },
+    {
+      path:'parameter-details',
+      component: ParameterDetailsComponent
+    },
+    {
       path:'customer-detail/:id',
       component: CustomerDetailComponent
+    },
+    {
+      path: '**',
+      component: PagenotfoundComponent
     },
     {
       path: '',

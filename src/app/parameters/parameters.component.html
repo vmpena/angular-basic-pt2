@@ -1,0 +1,17 @@
+<fieldset>
+  <legend class="marker">parameters.component.html</legend>
+
+  <div class="indent">
+    <h2>Links with Route Parameters</h2>
+    <ul>
+      <li>
+        <a [routerLink]="['/parameter-details', { city: 'Toronto', code:'YYZ', country:'Canada'}]">Toronto, Canada</a>
+      </li>
+      <li>
+        <a [routerLink]="['/parameter-details', { city: 'Montreal', code:'YUL'}]">Montreal, Canada</a>
+      </li>
+    </ul>
+
+  </div>
+
+</fieldset>
