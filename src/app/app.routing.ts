@@ -1,7 +1,6 @@
 import { ModuleWithProviders }  from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { AboutComponent }  from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
 import { CustomersComponent } from './customers/customers.component';
@@ -9,15 +8,12 @@ import { CustomerDetailComponent } from './customer-detail/customer-detail.compo
 import { ParametersComponent } from './parameters/parameters.component';
 import { ParameterDetailsComponent } from './parameter-details/parameter-details.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { ParentComponent } from './parent/parent.component';
 
 const appRoutes: Routes = [
     {
         path: 'home',
         component: HomeComponent
-    },
-    {
-        path: 'about',
-        component: AboutComponent
     },
     {
         path: 'contact',
@@ -38,6 +34,10 @@ const appRoutes: Routes = [
     {
       path:'customer-detail/:id',
       component: CustomerDetailComponent
+    },
+    {
+      path:'parent',
+      component: ParentComponent
     },
     {
       path: '**',

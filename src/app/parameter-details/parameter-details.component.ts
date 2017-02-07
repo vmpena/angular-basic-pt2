@@ -7,7 +7,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 //  2. Import Subscription from rxjs
 import { Subscription } from 'rxjs/Subscription';
 
-//  3. Import custom data type(s) and Service
+//  3. Import any custom data type(s) and Service
 
 
 @Component({
@@ -21,6 +21,8 @@ export class ParameterDetailsComponent implements OnInit,OnDestroy{
 
   //  5. add private member to hold reference to rxjs Subscription
   private subscription: Subscription;
+
+  // create properties to hold values passed via route parameters
   city: string;
   code: string;
 
@@ -35,7 +37,10 @@ export class ParameterDetailsComponent implements OnInit,OnDestroy{
       params => {
         this.city = params['city'];
         this.code = params['code'];
-        //this.getCity(city);
+
+        // route parameters could then be passed to an
+        // internal method to fetch data such as:
+        // this.getCity(city);
       });
   }
 
@@ -47,5 +52,6 @@ export class ParameterDetailsComponent implements OnInit,OnDestroy{
   onBack(): void {
     this.router.navigate(['/parameters']);
   }
+
 
 }

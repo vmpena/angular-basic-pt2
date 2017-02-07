@@ -1,0 +1,84 @@
+<fieldset>
+  <legend class="marker">parent.component.html</legend>
+
+  <div class="indent">
+    <h2>Nesting Components</h2>
+    <div>
+      First, create both parent and child components. The child component uses the selector
+      <code>app-child</code> so we'll include that custom element inside the parent template.
+
+    </div>
+
+    <div class="row">
+<br/>
+      <div class="col-md-3">
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Manufacturer</h3>
+          </div>
+          <div class="panel-body">
+           <ul class="list-unstyled">
+             <li>Gibson</li>
+             <li>Fender</li>
+           </ul>
+          </div>
+        </div><!-- manufacturer -->
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Wood</h3>
+          </div>
+          <div class="panel-body">
+            <ul class="list-unstyled">
+              <li>Alder</li>
+              <li>Poplar</li>
+            </ul>
+          </div>
+        </div><!-- wood -->
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Style</h3>
+          </div>
+          <div class="panel-body">
+            <ul class="list-unstyled">
+              <li>Acoustic</li>
+              <li>Electric</li>
+            </ul>
+          </div>
+        </div><!-- wood -->
+
+
+      </div> <!-- search facets -->
+
+
+      <div class="col-md-9">
+
+        <!-- nested child component goes here -->
+        <fieldset>
+          <legend class="marker">child.component.html</legend>
+
+          <div class="indent">
+
+            <app-child></app-child>
+
+          </div>
+
+        </fieldset>
+      </div>
+
+    </div> <!-- row -->
+
+
+    <br/>
+    <div>
+      Source:
+      <a href="https://angular.io/docs/ts/latest/cookbook/component-communication.html#!#parent-to-child">
+        Component Interaction
+      </a>
+    </div>
+
+  </div>
+
+</fieldset>

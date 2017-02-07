@@ -6,7 +6,6 @@ import {RouterModule} from "@angular/router";
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 
 import { Routing } from './app.routing';
@@ -16,19 +15,22 @@ import { CustomerService } from "./services/customer.service";
 import { ParametersComponent } from './parameters/parameters.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { ParameterDetailsComponent } from './parameter-details/parameter-details.component';
+import { ParentComponent } from './parent/parent.component';
+import { ChildComponent } from './child/child.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    AboutComponent,
     ContactComponent,
     CustomersComponent,
     CustomerDetailComponent,
     ParametersComponent,
     PagenotfoundComponent,
-    ParameterDetailsComponent
+    ParameterDetailsComponent,
+    ParentComponent,
+    ChildComponent
   ],
   imports: [
     BrowserModule,
