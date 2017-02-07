@@ -4,6 +4,17 @@
   <div class="indent">
     <h2>Links with Route Parameters</h2>
 
+  <div>We're linking to the parameter-details component and providing optional route parameters for each link.
+    using the Angular
+    <a href="https://angular.io/docs/ts/latest/guide/router.html#!#link-parameters-array">link parameters array</a> feature
+
+    You can pass an object of optional parameters to a route like this:
+
+    <!-- you have to escape the curly brace { by surrounding it with double curly braces -->
+    <code>['/parameter-details', {{  '{' }} city: 'Montreal', code:'YUL' {{'}'}}]</code>
+
+  </div>
+
     <ul>
       <li>
         <a [routerLink]="['/parameter-details', { city: 'Toronto', code:'YYZ', country:'Canada'}]">Toronto, Canada</a>

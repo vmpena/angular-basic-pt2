@@ -3,9 +3,21 @@
   <legend class="marker">contact.component.html</legend>
 
   <div class="indent">
+
   <h2>{{title}}</h2>
-  <p>Reach us by phone at: <em>{{phoneNumber}}</em></p>
-  <p>You can also reach us by any number of alternate means such as:</p>
+    <span> Today is {{today}}. </span>
+
+    <span *ngIf="officeIsOpen">
+      Our office is currently open, give us a call now.
+    </span>
+
+    <span *ngIf="!officeIsOpen">
+      We are closed now, but we'll be open again tomorrow.
+    </span>
+
+  <br/><br/>
+    <p>Reach us by phone at: <em>{{phoneNumber}}. </em>
+      You can also reach us by :</p>
 
   <!--    The NgFor directive instantiates a template once per item from an iterable.
           The context for each instantiated template inherits from the outer context
@@ -26,15 +38,6 @@
   <!--    Example of ngIf structural directive
           https://angular.io/docs/ts/latest/guide/structural-directives.html#!#ngIf
   -->
-  <span> Today is {{today}}. </span>
-
-  <span *ngIf="officeIsOpen">
-   Our office is currently open, give us a call now.
-  </span>
-
-  <span *ngIf="!officeIsOpen">
-    We are closed now, but we'll be open again tomorrow.
-  </span>
 
   </div>
 
