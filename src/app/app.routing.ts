@@ -9,6 +9,7 @@ import { ParametersComponent } from './parameters/parameters.component';
 import { ParameterDetailsComponent } from './parameter-details/parameter-details.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { ParentComponent } from './parent/parent.component';
+import { FacetsComponent } from './facets/facets.component';
 
 const appRoutes: Routes = [
     {
@@ -38,6 +39,10 @@ const appRoutes: Routes = [
     {
       path:'parent',
       component: ParentComponent
+    },
+    {
+      path:'facets',
+      component: FacetsComponent
     },
     {
       path: '**',

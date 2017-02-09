@@ -1,0 +1,58 @@
+<fieldset>
+  <legend class="marker">facets.component.html</legend>
+
+  <div class="indent">
+    <h2>Facets</h2>
+
+    <span *ngIf="facetHistory">
+
+      <span *ngFor="let f of facetHistory">
+
+            <button (click)="removeFacet(f)"
+                    class="btn btn-primary" type="button"> {{f.category}} > {{f.facetName}}
+                   <span class="badge">✖</span>
+            </button>
+
+        </span>
+
+    </span>
+
+    <div class="row">
+      <br/>
+      <div class="col-md-3">
+
+        <!-- first verify if the facets array is populated with data -->
+        <div *ngIf="facets">
+
+          <div *ngFor="let facet of facets">
+
+            {{facet.category}} -
+            <a (click)="addFacet(facet)"> {{facet.facetName }}</a> ({{facet.total }})
+
+          </div>
+
+        </div><!-- end ngIf facets -->
+
+
+      </div> <!-- search facets -->
+
+
+      <div class="col-md-9">
+        <p>Results</p>
+        <div>
+            <span *ngIf="facetHistory">
+              You're searching for these criteria:
+              <span *ngFor="let f of facetHistory">
+                   {{f.category}} > {{f.facetName}}
+              </span>
+
+        </span>
+        </div>
+
+      </div>
+
+    </div> <!-- row -->
+
+  </div>
+
+</fieldset>

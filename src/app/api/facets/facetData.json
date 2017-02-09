@@ -1,0 +1,42 @@
+[
+  {
+    "category": "Manufacturer",
+    "facetName": "Gibson",
+    "total": 16
+  },
+  {
+    "category": "Manufacturer",
+    "facetName": "Fender",
+    "total": 19
+  },
+  {
+    "category": "Manufacturer",
+    "facetName": "Taylor",
+    "total": 11
+  },
+  {
+    "category": "Wood",
+    "facetName": "Alder",
+    "total": 8
+  },
+  {
+    "category": "Wood",
+    "facetName": "Poplar",
+    "total": 12
+  },
+  {
+    "category": "Wood",
+    "facetName": "Ash",
+    "total": 4
+  },
+  {
+    "category": "Style",
+    "facetName": "Acoustic",
+    "total": 10
+  },
+  {
+    "category": "Style",
+    "facetName": "Electric",
+    "total": 14
+  }
+]

@@ -11,12 +11,16 @@ import { ContactComponent } from './contact/contact.component';
 import { Routing } from './app.routing';
 import { CustomersComponent } from './customers/customers.component';
 import { CustomerDetailComponent } from './customer-detail/customer-detail.component';
-import { CustomerService } from "./services/customer.service";
+
 import { ParametersComponent } from './parameters/parameters.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { ParameterDetailsComponent } from './parameter-details/parameter-details.component';
 import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
+import { FacetsComponent } from './facets/facets.component';
+
+import { CustomerService } from "./services/customer.service";
+import { FacetService } from "./services/facet.service";
 
 
 @NgModule({
@@ -30,7 +34,8 @@ import { ChildComponent } from './child/child.component';
     PagenotfoundComponent,
     ParameterDetailsComponent,
     ParentComponent,
-    ChildComponent
+    ChildComponent,
+    FacetsComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +44,7 @@ import { ChildComponent } from './child/child.component';
     RouterModule,
     Routing
   ],
-  providers: [ CustomerService],
+  providers: [ CustomerService, FacetService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
