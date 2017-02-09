@@ -38,5 +38,15 @@
     "category": "Style",
     "facetName": "Electric",
     "total": 14
+  },
+  {
+    "category": "Strings",
+    "facetName": "6 String",
+    "total": 24
+  },
+  {
+    "category": "Strings",
+    "facetName": "12 String",
+    "total": 5
   }
 ]

@@ -4,8 +4,8 @@
   <div class="indent">
     <h2>Facets</h2>
 
+    <!-- display the selected facet/filter queries -->
     <span *ngIf="facetHistory">
-
       <span *ngFor="let f of facetHistory">
 
             <button (click)="removeFacet(f)"
@@ -14,14 +14,14 @@
             </button>
 
         </span>
-
     </span>
+
 
     <div class="row">
       <br/>
+      <!-- Display facets -->
       <div class="col-md-3">
 
-        <!-- first verify if the facets array is populated with data -->
         <div *ngIf="facets">
 
           <div *ngFor="let facet of facets">
@@ -31,22 +31,25 @@
 
           </div>
 
-        </div><!-- end ngIf facets -->
+        </div>
 
+      </div>
 
-      </div> <!-- search facets -->
-
-
+      <!-- Display search results -->
       <div class="col-md-9">
-        <p>Results</p>
         <div>
-            <span *ngIf="facetHistory">
-              You're searching for these criteria:
-              <span *ngFor="let f of facetHistory">
-                   {{f.category}} > {{f.facetName}}
-              </span>
+          Assume you send an initial search for the word "guitar" as follows:
+          http://localhost:7000/api/search/guitar
+          <br/><br/>
+          By filtering your search based on guitar manufacturer, wood, strings or style (or any
+          arrangement of the criteria) you would send this query to your search
+          engine:
+        <br/><br/>
+            <div *ngIf="facetHistory">
+              http://localhost:7000/api/search/guitar
+              <span *ngFor="let f of facetHistory">&fq={{f.category.toLowerCase()}}:"{{f.facetName.toLowerCase()}}"</span>
 
-        </span>
+        </div>
         </div>
 
       </div>

@@ -12,7 +12,6 @@ import { FacetService } from '../services/facet.service';
 export class FacetsComponent implements OnInit {
 
   errorMessage: string;
-  selectedFacet: Facet;
   facets: Facet[];
 
   // array to hold history of each selected facet
@@ -29,15 +28,23 @@ export class FacetsComponent implements OnInit {
         error => this.errorMessage = <any>error);
   }
 
-  // every time a facet is clicked, add it to the history
+  // every time a facet is clicked, add it to history
   addFacet(facet:Facet){
-    console.log("Selected facet, ", facet.facetName, ", being added to history...");
-    this.facetHistory.push(facet);
 
-    console.log("Items in facetHistory", this.facetHistory.length);
+    console.log("Selected facet, ", facet.facetName, ", being added to history...");
+    let idx = this.facetHistory.indexOf(facet);
+
+    // Check if facet already exists in history before adding it.
+    // If it's already there, don't add it.
+    if(idx < 0 ){
+      this.facetHistory.push(facet);
+    }
+
+    console.log("Items in facetHistory: ", this.facetHistory.length);
   }
 
   removeFacet(facet:Facet){
+
     console.log("Selected facet, ", facet.facetName, ", being removed from history...");
     let idx = this.facetHistory.indexOf(facet);
 
@@ -45,10 +52,8 @@ export class FacetsComponent implements OnInit {
       this.facetHistory.splice(idx, 1);
     }
 
-    console.log("Items in facetHistory", this.facetHistory.length);
+    console.log("Items in facetHistory: ", this.facetHistory.length);
   }
-
-
 
   // getFacet(searchTerm: string, terms: string){
   //   let slash = terms.indexOf("/");
