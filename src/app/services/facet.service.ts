@@ -28,7 +28,7 @@ export class FacetService {
 
   getFacet(name: string): Observable<Facet> {
     return this.getFacets()
-      .map((facets: Facet[]) => facets.find(f => f.name === name));
+      .map((facets: Facet[]) => facets.find(f => f.facetName === name));
   }
 
   private handleError(error: Response) {
