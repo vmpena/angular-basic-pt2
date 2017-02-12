@@ -10,6 +10,8 @@ import { ParameterDetailsComponent } from './parameter-details/parameter-details
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { ParentComponent } from './parent/parent.component';
 import { FacetsComponent } from './facets/facets.component';
+import { FormsComponent } from './forms/forms.component';
+import { ClassesComponent } from './classes/classes.component';
 
 const appRoutes: Routes = [
     {
@@ -43,6 +45,14 @@ const appRoutes: Routes = [
     {
       path:'facets',
       component: FacetsComponent
+    },
+    {
+      path:'forms',
+      component: FormsComponent
+    },
+    {
+      path:'classes',
+      component: ClassesComponent
     },
     {
       path: '**',

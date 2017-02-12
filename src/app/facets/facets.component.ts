@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Facet } from './facet';
+import {Facet, SearchParameter } from './facet';
 import { FacetService } from '../services/facet.service';
 
 @Component({
@@ -17,6 +17,9 @@ export class FacetsComponent implements OnInit {
   // array to hold history of each selected facet
   facetHistory: Facet[] = [];
 
+  // array to hold each search parameter
+  parameters: SearchParameter[] = [];
+
   constructor(private facetService:FacetService) { }
 
   ngOnInit() {
@@ -26,18 +29,27 @@ export class FacetsComponent implements OnInit {
     this.facetService.getFacets()
       .subscribe(facets => this.facets = facets,
         error => this.errorMessage = <any>error);
+
   }
 
-  // every time a facet is clicked, add it to history
+  // every time a facet is clicked: add it to facet history and search parameter history
   addFacet(facet:Facet){
 
-    console.log("Selected facet, ", facet.facetName, ", being added to history...");
     let idx = this.facetHistory.indexOf(facet);
 
     // Check if facet already exists in history before adding it.
     // If it's already there, don't add it.
     if(idx < 0 ){
+
+      console.log("Selected facet, ", facet.facetName, ", being added to history...");
       this.facetHistory.push(facet);
+
+      // let p:SearchParameter;
+      // p.parameterName = "&fq=";
+      // p.parameterValue = facet.category + ":" + "\"" + facet.facetName + "\"";
+
+      // console.log("Adding facet to parameters: ", p.parameterName + p.parameterValue);
+      // this.addParameter(p);
     }
 
     console.log("Items in facetHistory: ", this.facetHistory.length);
@@ -55,21 +67,39 @@ export class FacetsComponent implements OnInit {
     console.log("Items in facetHistory: ", this.facetHistory.length);
   }
 
-  // getFacet(searchTerm: string, terms: string){
-  //   let slash = terms.indexOf("/");
-  //   let facetName = terms.slice(0, slash);
-  //   let term = terms.substring(slash + 1);
-  //   let facetQuery = "&fq=" + facetName + ":" + "\"" + term + "\"";
-  //
-  //   console.log("Inside getFacet(): ", " Facet: ", facetName, " | Term: ", term);
-  //   console.log("- add fq to original query: ", "fq=" + facetName + ":" + "\"" + term + "\"");
-  //   console.log("- facetQuery variable:", facetQuery);
-  //   console.log("- searchTerm variable:", searchTerm);
-  //   console.log("Sent to web api:", searchTerm + facetQuery);
-  //
-  //   // call mock search api
-  //   this.getData(facetQuery);
-  // }
+  // create SearchParameter object to include in array of Search Parameters
+  createSearchParameter(paramName:string, paramValue:string): SearchParameter{
+    let searchParam:SearchParameter;
 
+    if(!paramName || !paramValue){
+        searchParam.parameterName = paramName;
+        searchParam.parameterValue = paramValue;
+    }
+
+    return searchParam;
+  }
+
+  addParameter(param: SearchParameter){
+    console.log("Search Parameter being added to history...");
+    let idx = this.parameters.indexOf(param);
+
+    if(idx < 0 ){
+      this.parameters.push(param);
+    }
+
+    console.log("Items in search parameters: ", this.parameters.length);
+  }
+
+  removeParameter(param: SearchParameter){
+
+    console.log("Selected parameter being removed from history...");
+    let idx = this.parameters.indexOf(param);
+
+    if(idx != -1){
+      this.parameters.splice(idx, 1);
+    }
+
+    console.log("Items in search parameters: ", this.parameters.length);
+  }
 
 }

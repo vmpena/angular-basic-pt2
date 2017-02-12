@@ -18,9 +18,11 @@ import { ParameterDetailsComponent } from './parameter-details/parameter-details
 import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
 import { FacetsComponent } from './facets/facets.component';
+import { FormsComponent } from './forms/forms.component';
 
 import { CustomerService } from "./services/customer.service";
 import { FacetService } from "./services/facet.service";
+import { ClassesComponent } from './classes/classes.component';
 
 
 @NgModule({
@@ -35,7 +37,9 @@ import { FacetService } from "./services/facet.service";
     ParameterDetailsComponent,
     ParentComponent,
     ChildComponent,
-    FacetsComponent
+    FacetsComponent,
+    FormsComponent,
+    ClassesComponent
   ],
   imports: [
     BrowserModule,

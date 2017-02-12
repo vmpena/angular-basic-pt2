@@ -37,6 +37,13 @@
 
       <!-- Display search results -->
       <div class="col-md-9">
+        <div>Sort by:
+          <a href="#">Price</a> |
+          <a href="#">Manufacturer</a>
+
+        </div>
+
+        <br/>
         <div>
           Assume you send an initial search for the word "guitar" as follows:
           http://localhost:7000/api/search/guitar
@@ -47,7 +54,9 @@
         <br/><br/>
             <div *ngIf="facetHistory">
               http://localhost:7000/api/search/guitar
-              <span *ngFor="let f of facetHistory">&fq={{f.category.toLowerCase()}}:"{{f.facetName.toLowerCase()}}"</span>
+              <span *ngFor="let f of facetHistory">
+                &fq={{f.category.toLowerCase()}}:"{{f.facetName.toLowerCase()}}"
+              </span>
 
         </div>
         </div>

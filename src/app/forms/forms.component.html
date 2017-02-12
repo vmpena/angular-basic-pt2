@@ -1,0 +1,76 @@
+<fieldset>
+  <legend class="marker">forms.component.html</legend>
+
+  <div class="indent">
+  <h2>Forms</h2>
+    <p>
+      An Angular form coordinates
+      a set of data-bound user controls, tracks changes, validates input, and presents errors.
+      Reference: <a href="https://angular.io/docs/ts/latest/guide/forms.html">Angular Forms</a>
+    </p>
+    <hr/>
+
+    <div class="container">
+      <div class="row">
+        <form #formRef="ngForm" (ngSubmit)="onSubmit(formRef.value)">
+          <input
+            #usernameRef="ngModel"
+            name="username"
+            [(ngModel)]="username"
+            type="text"
+            required
+            minlength="3"
+          >
+          <div *ngIf="usernameRef.errors?.required">This field is required</div>
+          <div *ngIf="usernameRef.errors?.minlength">This field must be longer than {{usernameRef.errors?.minlength.requiredLength}} characters. You only typed {{usernameRef.errors?.minlength.actualLength}}</div>
+
+          <button type="submit">Submit</button>
+        </form>
+        {{formRef.value | json}}
+        {{formRef.valid | json}}
+      </div>
+    <br/>
+      <div class="row">
+
+        <div class="col-md-8">
+
+          <form>
+
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" class="form-control" id="name" required>
+            </div>
+
+            <div class="form-group">
+              <label for="alterEgo">Alter Ego</label>
+              <input type="text" class="form-control" id="alterEgo">
+            </div>
+
+            <div class="form-group">
+              <label for="power">Hero Power</label>
+
+              <select class="form-control" id="power" required>
+                <option *ngFor="let power of powers" [value]="power">{{power}}</option>
+              </select>
+
+            </div>
+
+            <button type="submit" class="btn btn-success">Submit</button>
+
+          </form>
+
+        </div> <!-- end col-md-8 -->
+
+        <div class="col-md-4">
+
+        </div><!-- end col-md-4 -->
+
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+</fieldset>
