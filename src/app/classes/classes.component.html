@@ -1,10 +1,77 @@
 <fieldset>
-  <legend class="marker">facets.component.html</legend>
+  <legend class="marker">classes.component.html</legend>
 
   <div class="indent">
-    <h2>Typescript Classes</h2>
-    <h3>{{greetingMessage.greet()}}</h3>
-    <p>Search Parameter: {{searchParam.queryParameter}}</p>
+    <h2>Facets</h2>
+
+    <!-- display the selected facet/filter queries -->
+    <span *ngIf="facetHistory">
+      <span *ngFor="let f of facetHistory">
+
+            <button (click)="removeFacet(f)"
+                    class="btn btn-primary" type="button"> {{f.category}} > {{f.facetName}}
+                   <span class="badge">✖</span>
+            </button>
+
+        </span>
+    </span>
+
+
+    <div class="row">
+      <br/>
+      <!-- Display facets -->
+      <div class="col-md-3">
+
+        <div *ngIf="facets">
+
+          <div *ngFor="let facet of facets">
+
+            {{facet.category}} -
+            <a (click)="addFacet(facet)"> {{facet.facetName }}</a> ({{facet.total }})
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Display search results -->
+      <div class="col-md-9">
+        <div>Sort by:
+          <a href="#">Price</a> |
+          <a href="#">Manufacturer</a>
+
+        </div>
+
+        <br/>
+        <div>
+          Assume you send an initial search for the word "guitar" as follows:
+          http://localhost:7000/api/search/guitar. By filtering your search based on guitar manufacturer, wood, strings or style (or any
+          arrangement of the criteria) you would send this query to your search
+          engine:
+          <br/><br/>
+          <p><b>Manually creating query string</b></p>
+          <div *ngIf="facetHistory">
+            http://localhost:7000/api/search/guitar
+            <span *ngFor="let f of facetHistory">
+                &fq={{f.category.toLowerCase()}}:"{{f.facetName.toLowerCase()}}"
+              </span>
+          </div>
+
+          <!-- display search parameter array -->
+          <br/>
+          <p><b>Programmatically creating query string</b></p>
+          <div *ngIf="parameters">
+            http://localhost:7000/api/search/guitar
+            <span *ngFor="let param of parameters">
+              {{param.queryParameter}}
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+    </div> <!-- row -->
 
   </div>
 
