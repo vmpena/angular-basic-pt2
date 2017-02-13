@@ -37,36 +37,29 @@
 
       <!-- Display search results -->
       <div class="col-md-9">
-        <div>Sort by:
-          <a href="#">Price</a> |
-          <a href="#">Manufacturer</a>
-
-        </div>
-
+      Sort by: <select>
+        <option *ngFor="let option of sortOptions"
+                (click)="setSortOrder(option.displayValue)">{{option.displayName}}</option>
+      </select>
         <br/>
         <div>
-          Assume you send an initial search for the word "guitar" as follows:
-          http://localhost:7000/api/search/guitar. By filtering your search based on guitar manufacturer, wood, strings or style (or any
-          arrangement of the criteria) you would send this query to your search
-          engine:
-          <br/><br/>
-          <p><b>Manually creating query string</b></p>
+
+          <p><b>Facet History for Displaying Labels</b></p>
           <div *ngIf="facetHistory">
-            http://localhost:7000/api/search/guitar
             <span *ngFor="let f of facetHistory">
-                &fq={{f.category.toLowerCase()}}:"{{f.facetName.toLowerCase()}}"
+                {{f.category.toLowerCase()}} > {{f.facetName.toLowerCase()}}
               </span>
           </div>
 
           <!-- display search parameter array -->
           <br/>
-          <p><b>Programmatically creating query string</b></p>
-          <div *ngIf="parameters">
+          <p><b>Facet and Sort History to be sent to web api</b></p>
+          <span *ngIf="facetQuery">
             http://localhost:7000/api/search/guitar
-            <span *ngFor="let param of parameters">
-              {{param.queryParameter}}
+            <span *ngFor="let param of facetQuery">
+              {{param}}
             </span>
-          </div>
+          </span><code>{{sortSelection}}</code>
         </div>
 
       </div>

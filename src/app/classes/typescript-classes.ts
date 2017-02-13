@@ -14,7 +14,6 @@
   export class SearchParameter{
     parameterName: string;
     parameterValue: string;
-
     queryParameter: string;
 
     constructor(paramName:string, paramValue:string){
