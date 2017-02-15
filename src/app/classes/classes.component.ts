@@ -56,7 +56,7 @@ export class ClassesComponent implements OnInit {
       console.log("Selected facet: ", facet.facetName, ", being added to history...");
       this.facetHistory.push(facet);
 
-      // add facet query to query string
+      // add facet query to query string array
       let fq = "&fq=";
       let facetValue = facet.category.toLowerCase() + ":" + "\"" +  facet.facetName.toLowerCase() + "\"";
 

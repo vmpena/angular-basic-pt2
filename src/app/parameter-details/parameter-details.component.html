@@ -5,19 +5,36 @@
 
     <h2>Parameter Details</h2>
     <p>The route for this page has no configuration to handle incoming parameters.
-      The parameters are handled via the Angular ActivatedRoute service.
-      <br/>
-      The route is:
+      The route configuration in app.module.ts is simply this:<br/>
       <code>
-      path:'parameter-details', component: ParameterDetailsComponent
-    </code>
+        path:'parameter-details', component: ParameterDetailsComponent
+      </code>
+
+    </p>
+    <p>
+      The parameters are handled via the Angular ActivatedRoute service. The calling page,
+      parameters.component.html, links to this page by passing an object of optional parameters
+      to the route like this:
+      <!-- you have to escape the curly brace { by surrounding it with double curly braces -->
+      <code>['/parameter-details', {{  '{' }} city: 'Montreal', code:'YUL' {{'}'}}]</code>
+    </p>
+
+    <p>
      The template handles the incoming route values just like properties of an object bound
     to this component. So the line below is written as:
       <code><span ngNonBindable>The code for {{city}} is {{code}}</span></code> where the values
     between curly braces are substituted for the values passed in via the route. </p>
 
+    <div *ngIf="city">
     <h3>Handling Route Parameters </h3>
-    <p>The code for <b>{{city}}</b> is {{code}}</p>
+      <p>The code for <b>{{city}}</b> is {{code}}</p>
+    </div>
+
+    <div *ngIf="!city">
+      There were no parameters passed to this component.
+      <br/><br/>
+    </div>
+
 
     <div>
       <a class='btn btn-default' routerLink="/parameters" style='width:80px'>
