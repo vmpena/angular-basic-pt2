@@ -23,8 +23,10 @@ export class ParameterDetailsComponent implements OnInit,OnDestroy{
   private subscription: Subscription;
 
   // create properties to hold values passed via route parameters
-  city: string;
-  code: string;
+  city: string = "";
+  code: string = "";
+
+  initialized:boolean = false;
 
   //  6. add reference to custom data type
 
@@ -33,14 +35,24 @@ export class ParameterDetailsComponent implements OnInit,OnDestroy{
 
   //  8. implement ngOnInit
   ngOnInit(): void {
+
     this.subscription = this.route.params.subscribe(
       params => {
         this.city = params['city'];
         this.code = params['code'];
 
-        // route parameters could then be passed to an
-        // internal method to fetch data such as:
-        // this.getCity(city);
+        console.log("Inside this.subscription. Value of this.code: ", this.code);
+
+        if(typeof this.code === "undefined" || typeof this.city === "undefined"){
+          console.log("this.code is undefined");
+        }
+        else{
+          this.initialized = true;
+
+          // route parameters could be passed to internal method
+          // this.getCity(city);
+        }
+
       });
   }
 

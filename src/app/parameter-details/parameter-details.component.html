@@ -35,6 +35,23 @@
       <br/><br/>
     </div>
 
+    <div> Parameters have been initialized:
+    {{initialized}}</div>
+
+    <div>
+      <h3>
+        Passing parameters to the same route:
+      </h3>
+      <ul>
+        <li>
+          <a [routerLink]="['/parameter-details', { city: 'Calgary', code:'YYC', country:'Canada'}]">Calgary, AB</a>
+        </li>
+        <li>
+          <a [routerLink]="['/parameter-details', { city: 'Winnipeg', code:'YWG'}]">Winnipeg, MB</a>
+        </li>
+      </ul>
+    </div>
+
 
     <div>
       <a class='btn btn-default' routerLink="/parameters" style='width:80px'>
