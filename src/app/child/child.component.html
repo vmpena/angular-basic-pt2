@@ -1,1 +1,14 @@
 <h4>This is the child component</h4>
+<div *ngIf="term">
+  <p>Search term received from parent component:
+    <span class="label label-info">
+      {{term}}
+    </span>
+  </p>
+</div>
+
+<div *ngIf="!term">
+  <p class="info">No search term has been received from parent component. </p>
+</div>
+
+

@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ParentComponent implements OnInit {
 
+  searchTerm: string;
+
   constructor() { }
 
   ngOnInit() {
+    console.log("Inside ParentComponent. Value of searchTerm: ", this.searchTerm);
+  }
+
+  getData(inputString: string){
+    this.searchTerm = inputString;
   }
 
 }

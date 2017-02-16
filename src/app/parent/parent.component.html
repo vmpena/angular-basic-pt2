@@ -6,11 +6,17 @@
     <div>
       First, create both parent and child components. The child component uses the selector
       <code>app-child</code> so we'll include that custom element inside the parent template.
+      <br/>
+      <span>Enter text:</span>
 
+      <input #searchBox (keyup.enter)="getData(searchBox.value)"
+             id="searchField" value="foreign">
+
+      <button (click)="getData(searchBox.value)">Send Data to Child Component</button>
     </div>
 
     <div class="row">
-<br/>
+    <br/>
       <div class="col-md-3">
 
         <div class="panel panel-default">
@@ -61,7 +67,7 @@
 
           <div class="indent">
 
-            <app-child></app-child>
+            <app-child [searchTerm]="searchTerm"></app-child>
 
           </div>
 
