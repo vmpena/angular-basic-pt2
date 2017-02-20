@@ -5,15 +5,22 @@
     <h2>Nesting Components</h2>
     <div>
       First, create both parent and child components. The child component uses the selector
-      <code>app-child</code> so we'll include that custom element inside the parent template.
+      <code>app-child</code> so we include that element inside the parent template.
+      The variable inside the parent component that will be passed to the child component
+      is called <code>searchTerm: string;</code> You then map that variable to the child component
+      template like this: <code> &lt;app-child [searchTerm]="searchTerm"&gt; </code>
+
+      <br/> <br/>
+      The text entered into the textbox below is sent to the child component.
       <br/>
       <span>Enter text:</span>
 
       <input #searchBox (keyup.enter)="getData(searchBox.value)"
-             id="searchField" value="foreign">
+             id="searchField" value="fender stratocaster">
 
       <button (click)="getData(searchBox.value)">Send Data to Child Component</button>
     </div>
+
 
     <div class="row">
     <br/>

@@ -56,6 +56,10 @@ export class ParameterDetailsComponent implements OnInit,OnDestroy{
       });
   }
 
+  getRoute(_city:string, _code:string){
+    this.router.navigate(['/parameter-details', {city: _city, code:_code}]);
+  }
+
   //  9. implement OnDestroy
   ngOnDestroy() {
     this.subscription.unsubscribe();

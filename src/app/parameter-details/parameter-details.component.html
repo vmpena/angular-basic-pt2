@@ -40,7 +40,7 @@
 
     <div>
       <h3>
-        Passing parameters to the same route:
+        Passing parameters to the same route via <code>[routerLink]</code> references:
       </h3>
       <ul>
         <li>
@@ -50,6 +50,20 @@
           <a [routerLink]="['/parameter-details', { city: 'Winnipeg', code:'YWG'}]">Winnipeg, MB</a>
         </li>
       </ul>
+    </div>
+    <h3>
+      Passing <a href="http://air-travel.discoverfrance.net/airport_codes_ca.shtml>">parameters</a> to the same
+      route programmatically.
+    </h3>
+    <div>
+    <ul>
+      <li>
+        <a (click)="getRoute('Quebec', 'YQB')">Quebec, QC</a>
+      </li>
+      <li>
+        <a (click)="getRoute('Halifax', 'YHZ')">Halifax, NS</a>
+      </li>
+    </ul>
     </div>
 
 

@@ -7,8 +7,10 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ChildComponent implements OnInit {
 
-  // the parent variable is 'searchTerm' but here
-  // we refer to it locally as 'term'
+  // the parent variable is named 'searchTerm' but we rename
+  // it as 'term' to use locally. Tha means that inside the
+  // child component, you'd refer to this variable by using
+  // {{term}}
   @Input('searchTerm') term:string;
 
   constructor() { }
