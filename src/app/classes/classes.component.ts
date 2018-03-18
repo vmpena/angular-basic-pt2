@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { SearchParameter, Facet } from './typescript-classes';
+// import { SearchParameter, Facet } from './typescript-classes';
+import { Facet } from '../facets/facet'
 
 import { FacetService } from '../services/facet.service';
 
@@ -52,6 +53,8 @@ export class ClassesComponent implements OnInit {
   addFacet(facet:Facet){
     let idx = this.facetHistory.indexOf(facet);
 
+    console.log("id: ", idx);
+
     if(idx < 0 ){
       console.log("Selected facet: ", facet.facetName, ", being added to history...");
       this.facetHistory.push(facet);
@@ -63,7 +66,24 @@ export class ClassesComponent implements OnInit {
       this.facetQuery.push(fq + facetValue);
     }
 
+    this.displayFacetHistory();
+
     console.log("Items in facetHistory: ", this.facetHistory.length);
+  }
+
+  displayFacetHistory(){
+
+    if(this.facetHistory.length === 0){
+      console.log("FacetHistory[] is empty");
+    }
+    else{
+      console.log("Contents of FacetHistory[]...");
+
+      for(let i = 0, len = this.facetHistory.length; i < len; i++) {
+
+        console.log(i, ": ", this.facetHistory[i].category, " ", this.facetHistory[i].facetName)
+      }
+    }
   }
 
   removeFacet(facet:Facet){

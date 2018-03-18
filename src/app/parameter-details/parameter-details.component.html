@@ -9,9 +9,6 @@
       <code>
         path:'parameter-details', component: ParameterDetailsComponent
       </code>
-
-    </p>
-    <p>
       The parameters are handled via the Angular ActivatedRoute service. The calling page,
       parameters.component.html, links to this page by passing an object of optional parameters
       to the route like this:
@@ -35,13 +32,12 @@
       <br/><br/>
     </div>
 
-    <div> Parameters have been initialized:
-    {{initialized}}</div>
-
+    <div> Parameters have been initialized:{{initialized}}</div>
+  <br/>
     <div>
-      <h3>
+      <b>
         Passing parameters to the same route via <code>[routerLink]</code> references:
-      </h3>
+      </b>
       <ul>
         <li>
           <a [routerLink]="['/parameter-details', { city: 'Calgary', code:'YYC', country:'Canada'}]">Calgary, AB</a>
@@ -51,17 +47,17 @@
         </li>
       </ul>
     </div>
-    <h3>
+    <b>
       Passing <a href="http://air-travel.discoverfrance.net/airport_codes_ca.shtml>">parameters</a> to the same
       route programmatically.
-    </h3>
+    </b>
     <div>
     <ul>
       <li>
         <a (click)="getRoute('Quebec', 'YQB')">Quebec, QC</a>
       </li>
       <li>
-        <a (click)="getRoute('Halifax', 'YHZ')">Halifax, NS</a>
+        <a (click)="getRoute('Halifax', 'YHZ', 'Canada')">Halifax, NS</a>
       </li>
     </ul>
     </div>

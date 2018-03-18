@@ -12,7 +12,12 @@ import { Customer } from '../customers/customer'
 @Injectable()
 export class CustomerService {
 
-  private dataSource = './app/api/customers/customerData.json';
+  // private dataSource = './app/api/customers/customerData.json';
+
+  // assumes that json-server is running on port 3000 using a data file
+  // that includes the customer schema as reflected by the Customer object we're
+  // importing above.
+  private dataSource = 'http://localhost:3000/customers';
 
   constructor(private http: Http) { }
 
@@ -28,7 +33,7 @@ export class CustomerService {
 
   getCustomer(id: number): Observable<Customer> {
     return this.getCustomers()
-      .map((customers: Customer[]) => customers.find(c => c.ID === id));
+      .map((customers: Customer[]) => customers.find(c => c.id === id));
   }
 
   private handleError(error: Response) {

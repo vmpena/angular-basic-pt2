@@ -9,7 +9,7 @@ export interface Friend {
 }
 
 export interface Customer {
-  ID: number;
+  id: number;
   isActive: boolean;
   balance: string;
   picture: string;

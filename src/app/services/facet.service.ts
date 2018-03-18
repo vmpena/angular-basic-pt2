@@ -12,7 +12,11 @@ import { Facet } from '../facets/facet'
 @Injectable()
 export class FacetService {
 
-  private dataSource = './app/api/facets/facetData.json';
+  // Using a json file to mock an API call
+  // private dataSource = './app/api/facets/facetData.json';
+
+  // using an instance of JSON Server running on port 3000 as the mock API
+  private  dataSource = 'http://localhost:3000/facets';
 
   constructor(private http: Http) { }
 

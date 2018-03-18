@@ -29,7 +29,6 @@
     category: string;
     facetName: string;
     total: number;
-    strings: string;
   }
 
 

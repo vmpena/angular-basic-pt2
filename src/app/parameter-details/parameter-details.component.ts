@@ -25,6 +25,7 @@ export class ParameterDetailsComponent implements OnInit,OnDestroy{
   // create properties to hold values passed via route parameters
   city: string = "";
   code: string = "";
+  country: string = "";
 
   initialized:boolean = false;
 
@@ -40,6 +41,7 @@ export class ParameterDetailsComponent implements OnInit,OnDestroy{
       params => {
         this.city = params['city'];
         this.code = params['code'];
+        this.country = params['country'];
 
         console.log("Inside this.subscription. Value of this.code: ", this.code);
 
@@ -56,8 +58,9 @@ export class ParameterDetailsComponent implements OnInit,OnDestroy{
       });
   }
 
-  getRoute(_city:string, _code:string){
-    this.router.navigate(['/parameter-details', {city: _city, code:_code}]);
+
+  getRoute(_city:string, _code:string, _country:string){
+    this.router.navigate(['/parameter-details', {city: _city, code:_code, country: _country }]);
   }
 
   //  9. implement OnDestroy

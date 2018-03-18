@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 
 export class AppComponent {
-  title = 'Angular 2 Basic - Part 2';
+  title = 'Basic Angular app - Part 2';
   description = 'Brief overview of features';
 
   year = new Date().getFullYear();

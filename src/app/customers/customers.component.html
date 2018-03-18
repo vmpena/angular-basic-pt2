@@ -8,7 +8,7 @@
         a mock api that returns json data. The customers.component calls the  service in its
         <code>ngOnInit()</code> method. Each customer name links to the customer-detail
         component, passing the ID number as a parameter:
-         <code> [routerLink]="['/customer-detail', customer.ID]</code>
+         <code> [routerLink]="['/customer-detail', customer.id]</code>
       </p>
 
       <div class='panel panel-primary'>
@@ -33,7 +33,7 @@
 
               <tbody>
               <tr *ngFor='let customer of customers'>
-                <td><a [routerLink]="['/customer-detail', customer.ID]">
+                <td><a [routerLink]="['/customer-detail', customer.id]">
                   {{customer.name.first}} {{ customer.name.last}}
                 </a>
                 </td>

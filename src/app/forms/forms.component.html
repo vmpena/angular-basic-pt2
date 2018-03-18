@@ -12,22 +12,50 @@
 
     <div class="container">
       <div class="row">
+
+        <!-- form example 1 -->
+        <!--<form #formRef="ngForm" (ngSubmit)="onSubmit(formRef.value)">-->
+          <!--<input-->
+            <!--#usernameRef="ngModel"-->
+            <!--name="username"-->
+            <!--[(ngModel)]="username"-->
+            <!--type="text"-->
+            <!--required-->
+            <!--minlength="3"-->
+          <!--&gt;-->
+          <!--<div *ngIf="usernameRef.errors?.required">This field is required</div>-->
+          <!--<div *ngIf="usernameRef.errors?.minlength">-->
+            <!--This field must be longer than {{usernameRef.errors?.minlength.requiredLength}} characters.-->
+            <!--You only typed {{usernameRef.errors?.minlength.actualLength}}-->
+          <!--</div>-->
+
+          <!--<button type="submit">Submit</button>-->
+        <!--</form>-->
+        <!--{{formRef.value | json}}-->
+        <!--{{formRef.valid | json}}-->
+
+        <!-- form example 2 -->
         <form #formRef="ngForm" (ngSubmit)="onSubmit(formRef.value)">
+
           <input
             #usernameRef="ngModel"
             name="username"
             [(ngModel)]="username"
             type="text"
-            required
-            minlength="3"
-          >
+            required>
+
           <div *ngIf="usernameRef.errors?.required">This field is required</div>
-          <div *ngIf="usernameRef.errors?.minlength">This field must be longer than {{usernameRef.errors?.minlength.requiredLength}} characters. You only typed {{usernameRef.errors?.minlength.actualLength}}</div>
 
           <button type="submit">Submit</button>
         </form>
-        {{formRef.value | json}}
-        {{formRef.valid | json}}
+
+        <!-- form example 3 (required form field ) -->
+
+        <!--<form #formCtrl="ngForm">-->
+          <!--<input ngControl="passwordCtrl" required>-->
+          <!--<button [disabled]="!formCtrl.form.valid">Some button</button>-->
+        <!--</form>-->
+
       </div>
     <br/>
       <div class="row">
@@ -38,7 +66,8 @@
 
             <div class="form-group">
               <label for="name">Name</label>
-              <input type="text" class="form-control" id="name" required>
+              <input type="text" class="form-control inputBackground"
+                     id="name" required>
             </div>
 
             <div class="form-group">
